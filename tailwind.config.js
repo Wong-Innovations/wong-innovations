@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       maxWidth: {
-        "50p": "50%",
+        "1/2": "50%",
       },
     },
   },

@@ -4,18 +4,21 @@ import { Canvas } from "@react-three/fiber";
 import Cube from "./models/Cube";
 import Profile from "./components/Profile";
 import Nav from "./components/Nav";
+import ScrollToAnchor from "./components/ScrollToAnchor";
+import AutoHideScroll from "./components/AutoHideScroll";
 
 const App = () => {
   return (
-    <main className="h-full bg-zinc-800 text-black dark:text-white">
+    <main className={`h-full bg-zinc-800 text-black dark:text-white`}>
       <Nav />
-      <header className="flex h-screen">
-        <section className="flex-grow max-w-50p flex flex-col justify-center">
+      <header id="home" className="flex h-screen">
+        <section className="flex-grow max-w-1/2 flex flex-col justify-center">
           <Profile />
         </section>
-        <div className="flex-grow max-w-50p">
+        <div className="flex-grow max-w-1/2">
           <Canvas
             className="touch-none"
+            resize={{ scroll: false }}
             camera={{
               position: [-2.77, 2, 5.5],
               rotation: [-0.3155, -0.4431, -0.139],
@@ -31,6 +34,9 @@ const App = () => {
           </Canvas>
         </div>
       </header>
+      <section id="timeline" className="flex h-screen"></section>
+      <AutoHideScroll />
+      <ScrollToAnchor />
     </main>
   );
 };

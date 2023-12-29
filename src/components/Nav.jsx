@@ -1,4 +1,5 @@
-import { useSearchParams, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 import HouseIcon from "../assets/house.svg?react";
 import TimelineIcon from "../assets/timeline.svg?react";
@@ -10,91 +11,91 @@ import LinkedInIcon from "../assets/linkedin.svg?react";
 import GithubIcon from "../assets/github.svg?react";
 
 const Nav = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
+  const [locale, setLocale] = useState("");
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    setHash("");
+    setLocale("");
+    if (!location.hash) {
+      if (location.search) {
+        setLocale(new URLSearchParams(location.search).get("locale"));
+      }
+    } else {
+      let afterRoute = location.hash.split("?");
+
+      setHash(afterRoute[0]);
+
+      if (afterRoute.length > 1) {
+        setLocale(new URLSearchParams(afterRoute[1]).get("locale"));
+      }
+    }
+  }, [location]);
 
   return (
     <div className="fixed inset-y-0 left-0 flex flex-col items-center justify-between bg-zinc-900 h-screen p-4">
       <div className="flex flex-col items-center space-y-1">
-        <p
-          onClick={() => setSearchParams({ locale: "en" })}
+        <Link
+          reloadDocument
+          to={location.pathname + hash}
           className={`text-sm hover:cursor-pointer hover:text-white ${
-            !searchParams.get("locale") ||
-            searchParams.get("locale").toLowerCase() == "en"
-              ? "text-teal-400"
-              : "text-zinc-500"
+            !locale ? "text-teal-400" : "text-zinc-500"
           }`}
         >
           EN
-        </p>
-        <p
-          onClick={() => setSearchParams({ locale: "jp" })}
+        </Link>
+        <Link
+          reloadDocument
+          to={location.pathname + hash + "?locale=jp"}
           className={`text-sm hover:cursor-pointer hover:text-white ${
-            searchParams.get("locale") &&
-            searchParams.get("locale").toLowerCase() == "jp"
-              ? "text-teal-400"
-              : "text-zinc-500"
+            locale.toLowerCase() == "jp" ? "text-teal-400" : "text-zinc-500"
           }`}
         >
           JP
-        </p>
+        </Link>
       </div>
       <nav className="flex flex-col items-center justify-center space-y-4">
-        <a
-          href={
-            !searchParams.get("locale") ||
-            searchParams.get("locale").toLowerCase() == "en"
-              ? "/"
-              : "/?locale=jp"
-          }
-        >
+        <Link to={"/" + (locale ? `?locale=${locale}` : "")}>
           <HouseIcon
             className={`w-6 h-6 hover:fill-white ${
-              !location.hash ? "fill-teal-400" : "fill-zinc-500"
+              !hash ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Home</span>
-        </a>
-        <a href="#about">
+        </Link>
+        <Link to={"#timeline" + (locale ? `?locale=${locale}` : "")}>
           <TimelineIcon
             className={`w-6 h-6 hover:fill-white ${
-              location.hash && location.hash == "#about"
-                ? "fill-teal-400"
-                : "fill-zinc-500"
+              hash == "#timeline" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">About</span>
-        </a>
-        <a href="#code">
+        </Link>
+        <Link to={"#code" + (locale ? `?locale=${locale}` : "")}>
           <CodeIcon
             className={`w-6 h-6 hover:fill-white ${
-              location.hash && location.hash == "#code"
-                ? "fill-teal-400"
-                : "fill-zinc-500"
+              hash == "#code" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Code</span>
-        </a>
-        <a href="#gallery">
+        </Link>
+        <Link to={"#gallery" + (locale ? `?locale=${locale}` : "")}>
           <PictureIcon
             className={`w-6 h-6 hover:fill-white ${
-              location.hash && location.hash == "#gallery"
-                ? "fill-teal-400"
-                : "fill-zinc-500"
+              hash == "#gallery" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Gallery</span>
-        </a>
-        <a href="#contact">
+        </Link>
+        <Link to={"#contact" + (locale ? `?locale=${locale}` : "")}>
           <MailIcon
             className={`w-6 h-6 hover:fill-white ${
-              location.hash && location.hash == "#contact"
-                ? "fill-teal-400"
-                : "fill-zinc-500"
+              hash == "#contact" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Contact Me</span>
-        </a>
+        </Link>
       </nav>
       <div className="flex flex-col items-center space-y-4">
         <a target="_blank" rel="noopener noreferrer" href="#">
