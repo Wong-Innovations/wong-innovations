@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 
 import HouseIcon from "../assets/house.svg?react";
@@ -98,15 +98,27 @@ const Nav = () => {
         </Link>
       </nav>
       <div className="flex flex-col items-center space-y-4">
-        <a target="_blank" rel="noopener noreferrer" href="#">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/dylanwong886/"
+        >
           <InstagramIcon className="w-5 h-5 fill-zinc-500 hover:fill-white" />
           <span className="sr-only">Instagram</span>
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="#">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/wong-innovations/"
+        >
           <LinkedInIcon className="w-5 h-5 fill-zinc-500 hover:fill-white" />
           <span className="sr-only">LinkedIn</span>
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="#">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Wong-Innovations"
+        >
           <GithubIcon className="w-5 h-5 stroke-zinc-500 hover:stroke-white" />
           <span className="sr-only">Github</span>
         </a>
