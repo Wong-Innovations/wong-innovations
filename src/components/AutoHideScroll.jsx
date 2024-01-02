@@ -1,22 +1,22 @@
 import { useEffect } from "react";
 
 const AutoHideScroll = () => {
-  let scrollTimeout;
+  let scrollendTimeout;
 
   useEffect(() => {
+    // initially disable css that hides scrollbar
     document.getElementById("hide-scroll").disabled = false;
-    window.onscroll = () => {
+    // listen for scroll events
+    window.addEventListener("scroll", () => {
       document.getElementById("hide-scroll").disabled = true;
-    };
-    window.onscrollend = () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
+      clearTimeout(scrollendTimeout);
+      scrollendTimeout = setTimeout(() => {
         document.getElementById("hide-scroll").disabled = false;
       }, 1000);
-    };
+    });
   }, []);
 
-  return <></>;
+  return null;
 };
 
 export default AutoHideScroll;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import HouseIcon from "../assets/house.svg?react";
 import TimelineIcon from "../assets/timeline.svg?react";
@@ -9,13 +10,15 @@ import MailIcon from "../assets/mail.svg?react";
 import InstagramIcon from "../assets/instagram.svg?react";
 import LinkedInIcon from "../assets/linkedin.svg?react";
 import GithubIcon from "../assets/github.svg?react";
+import ScrollToAnchor from "./ScrollToAnchor";
 
 const Nav = () => {
   const location = useLocation();
-  const [locale, setLocale] = useState("");
+  const [locale, setLocale] = useState("en");
   const [hash, setHash] = useState("");
+  const { i18n } = useTranslation();
 
-  useEffect(() => {
+  const parseURL = () => {
     setHash("");
     setLocale("");
     if (!location.hash) {
@@ -31,71 +34,94 @@ const Nav = () => {
         setLocale(new URLSearchParams(afterRoute[1]).get("locale"));
       }
     }
-  }, [location]);
+  };
+
+  useEffect(() => {
+    parseURL();
+  }, []);
+
+  useEffect(() => {
+    window.history.replaceState(
+      null,
+      null,
+      location.pathname + hash + (locale.length > 0 ? `?locale=${locale}` : "")
+    );
+  }, [hash]);
+
+  useEffect(() => {
+    i18n.changeLanguage(locale.length > 0 ? locale : "en");
+    window.history.replaceState(
+      null,
+      null,
+      `/${hash}${locale.length > 0 ? `?locale=${locale}` : ""}`
+    );
+  }, [locale]);
 
   return (
     <div className="fixed inset-y-0 left-0 flex flex-col items-center justify-between bg-zinc-900 h-screen p-4">
       <div className="flex flex-col items-center space-y-1">
-        <Link
-          reloadDocument
-          to={location.pathname + hash}
+        <span
+          onClick={() => {
+            setLocale("");
+          }}
           className={`text-sm hover:cursor-pointer hover:text-white ${
             !locale ? "text-teal-400" : "text-zinc-500"
           }`}
         >
           EN
-        </Link>
-        <Link
-          reloadDocument
-          to={location.pathname + hash + "?locale=jp"}
+        </span>
+        <span
+          onClick={() => {
+            setLocale("jp");
+          }}
           className={`text-sm hover:cursor-pointer hover:text-white ${
             locale.toLowerCase() == "jp" ? "text-teal-400" : "text-zinc-500"
           }`}
         >
           JP
-        </Link>
+        </span>
       </div>
       <nav className="flex flex-col items-center justify-center space-y-4">
-        <Link to={"/" + (locale ? `?locale=${locale}` : "")}>
+        <span onClick={() => setHash("")}>
           <HouseIcon
             className={`w-6 h-6 hover:fill-white ${
               !hash ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Home</span>
-        </Link>
-        <Link to={"#timeline" + (locale ? `?locale=${locale}` : "")}>
+        </span>
+        <span onClick={() => setHash("#timeline")}>
           <TimelineIcon
             className={`w-6 h-6 hover:fill-white ${
               hash == "#timeline" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">About</span>
-        </Link>
-        <Link to={"#code" + (locale ? `?locale=${locale}` : "")}>
+        </span>
+        <span onClick={() => setHash("#code")}>
           <CodeIcon
             className={`w-6 h-6 hover:fill-white ${
               hash == "#code" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Code</span>
-        </Link>
-        <Link to={"#gallery" + (locale ? `?locale=${locale}` : "")}>
+        </span>
+        <span onClick={() => setHash("#gallery")}>
           <PictureIcon
             className={`w-6 h-6 hover:fill-white ${
               hash == "#gallery" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Gallery</span>
-        </Link>
-        <Link to={"#contact" + (locale ? `?locale=${locale}` : "")}>
+        </span>
+        <span onClick={() => setHash("#contact")}>
           <MailIcon
             className={`w-6 h-6 hover:fill-white ${
               hash == "#contact" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
           <span className="sr-only">Contact Me</span>
-        </Link>
+        </span>
       </nav>
       <div className="flex flex-col items-center space-y-4">
         <a
@@ -123,6 +149,7 @@ const Nav = () => {
           <span className="sr-only">Github</span>
         </a>
       </div>
+      <ScrollToAnchor hash={hash} />
     </div>
   );
 };

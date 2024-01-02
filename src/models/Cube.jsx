@@ -34,9 +34,12 @@ const Cube = (props) => {
   };
 
   useEffect(() => {
-    names.forEach((name) => actions[name].reset().play());
-    doRotate();
-    setInterval(doRotate, 3000);
+    if (!props.isAnimating) {
+      names.forEach((name) => actions[name].reset().play());
+      doRotate();
+      setInterval(doRotate, 3000);
+      props.setIsAnimating(true);
+    }
   });
 
   return (

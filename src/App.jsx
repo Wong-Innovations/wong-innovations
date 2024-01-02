@@ -1,17 +1,20 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import Cube from "./models/Cube";
 import Profile from "./components/Profile";
 import Nav from "./components/Nav";
-import ScrollToAnchor from "./components/ScrollToAnchor";
-import AutoHideScroll from "./components/AutoHideScroll";
+import MyTimeline from "./components/MyTimeline";
 
 const App = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
   return (
-    <main className={`h-full bg-zinc-800 text-black dark:text-white`}>
+    <main
+      className={`h-full bg-zinc-800 text-gray-900 dark:text-gray-50 pl-14`}
+    >
       <Nav />
-      <header id="home" className="flex h-screen">
+      <header id="#home" className="flex h-screen">
         <section className="flex-grow max-w-1/2 flex flex-col justify-center">
           <Profile />
         </section>
@@ -29,14 +32,16 @@ const App = () => {
             <directionalLight position={[-8, 10, 7.5]} />
             <directionalLight position={[6, -10, 2]} intensity={0.5} />
             <Suspense fallback={null}>
-              <Cube />
+              {/* prop drilling so that the cube only restarts it's current animations when the page reloads. */}
+              <Cube isAnimating={isAnimating} setIsAnimating={setIsAnimating} />
             </Suspense>
           </Canvas>
         </div>
       </header>
-      <section id="timeline" className="flex h-screen"></section>
-      <AutoHideScroll />
-      <ScrollToAnchor />
+      <section id="#timeline" className="flex min-h-screen">
+        <MyTimeline />
+      </section>
+      <section id="#code" className="flex min-h-screen"></section>
     </main>
   );
 };
