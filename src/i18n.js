@@ -13,14 +13,19 @@ i18n
       en: {
         translation: enUS,
       },
-      jp: {
+      ja: {
         translation: jaJP,
       },
     },
     fallbackLng: "en",
+    supportedLngs: ["en", "ja"],
     ns: ["translation"],
     defaultNS: "translation",
     keySeparator: false, // we use content as keys
+    convertDetectedLanguage: "Iso15897",
+    detection: {
+      order: ["navigator"],
+    },
     react: {
       useSuspense: false,
     },

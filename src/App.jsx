@@ -5,13 +5,14 @@ import Cube from "./models/Cube";
 import Profile from "./components/Profile";
 import Nav from "./components/Nav";
 import MyTimeline from "./components/MyTimeline";
+import Skills from "./components/Skills";
 
 const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   return (
     <main
-      className={`h-full bg-zinc-800 text-gray-900 dark:text-gray-50 pl-14`}
+      className={`h-full bg-zinc-800 text-gray-900 dark:text-gray-50 pl-14 whitespace-pre-line`}
     >
       <Nav />
       <header id="#home" className="flex h-screen">
@@ -41,7 +42,9 @@ const App = () => {
       <section id="#timeline" className="flex min-h-screen">
         <MyTimeline />
       </section>
-      <section id="#code" className="flex min-h-screen"></section>
+      <section id="#code" className="flex min-h-screen">
+        <Skills />
+      </section>
     </main>
   );
 };

@@ -1,8 +1,7 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Profile = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col items-start space-y-4 ml-16">
@@ -20,15 +19,15 @@ const Profile = () => {
           {t("name")}
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl dark:text-gray-200">
-          Fullstack Developer &amp; DevOps Consultant
+          {t("roles")}
         </p>
       </div>
       <div className="space-x-4">
         <button className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300">
-          View Portfolio
+          {t("view_portfolio")}
         </button>
         <button className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300">
-          Contact Me
+          {t("contact_me")}
         </button>
       </div>
     </div>

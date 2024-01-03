@@ -1,3 +1,16 @@
 {
-  "name": "Dylan Wong"
+  "name": "Dylan Wong",
+  "contact_me": "Contact Me",
+  "roles": "Fullstack Developer // DevOps Consultant",
+  "view_portfolio": "View Portfolio",
+  "devops_consultant": "DevOps Consultant",
+  "oncore_summary": "Migrating Java Spring Applications To Nuxt\nWriting CI Pipelines For Openshift And Jenkins",
+  "fullstack_intern": "Fullstack Intern",
+  "npm_dev": "NPM Package Developer",
+  "os_contributor": "Opensource Contributor",
+  "os_contributor_summary": "Minecraft Mod Development | Java Mixins\nContributions To GroovyScript: A Meta Content Framework That Allows Users To Add New Items, Recipes, and Interactions To Minecraft Using The Groovy Scripting Language.\nCreation of Several Novel Mods:",
+  "bs_math": "Bachelor of Science in Applied Mathematics",
+  "present": "present",
+  "year": "",
+  "november_2019": "November 2019"
 }
