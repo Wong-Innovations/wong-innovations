@@ -141,7 +141,6 @@ const Nav = () => {
           <span className="sr-only">Github</span>
         </a>
       </div>
-      {/* <ScrollToAnchor hash={hash} /> */}
     </div>
   );
 };

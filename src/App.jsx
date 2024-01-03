@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Nav from "./components/Nav";
 import MyTimeline from "./components/MyTimeline";
 import Skills from "./components/Skills";
+import AutoHideScroll from "./components/AutoHideScroll";
 
 const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -42,9 +43,10 @@ const App = () => {
       <section id="#timeline" className="flex min-h-screen">
         <MyTimeline />
       </section>
-      <section id="#code" className="flex min-h-screen">
+      <section id="#code" className="flex flex-col min-h-min">
         <Skills />
       </section>
+      <AutoHideScroll />
     </main>
   );
 };
