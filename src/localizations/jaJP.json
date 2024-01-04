@@ -13,5 +13,13 @@
   "present": "現在",
   "year": "年",
   "november_2019": "2019年11月",
-  "skills": "職業技能"
+  "skills": "職業技能",
+  "frontend": "フロントエンド",
+  "frontend_skills": "",
+  "backend": "バックエンド",
+  "backend_skills": "",
+  "ci": "継続的インテグレーション",
+  "ci_skills": "",
+  "languages": "言語",
+  "language_skills": ""
 }

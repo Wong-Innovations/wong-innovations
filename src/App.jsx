@@ -1,5 +1,7 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import Cube from "./models/Cube";
 import Profile from "./components/Profile";
@@ -10,6 +12,10 @@ import AutoHideScroll from "./components/AutoHideScroll";
 
 const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     <main
@@ -46,6 +52,8 @@ const App = () => {
       <section id="#code" className="flex flex-col min-h-min">
         <Skills />
       </section>
+      <section id="#gallery" className="flex min-h-screen"></section>
+      <section id="#contact" className="flex min-h-screen"></section>
       <AutoHideScroll />
     </main>
   );

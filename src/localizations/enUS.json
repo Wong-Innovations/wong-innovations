@@ -13,5 +13,13 @@
   "present": "present",
   "year": "",
   "november_2019": "November 2019",
-  "skills": "Skills"
+  "skills": "Skills",
+  "frontend": "Frontend",
+  "frontend_skills": "React\nVue\nReact Native\nRedux\nTailwind\nHTML/CSS",
+  "backend": "Backend",
+  "backend_skills": "Express\nPrisma\nGraphQL\nSQL\nDjango\nSpring",
+  "ci": "CI",
+  "ci_skills": "Jenkins\nAnsible\nOpenShift",
+  "languages": "Languages",
+  "language_skills": "JavaScript\nPython\nJava"
 }
