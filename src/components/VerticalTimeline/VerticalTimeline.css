@@ -22,7 +22,9 @@
   position: absolute;
   top: 0;
   left: 18px;
-  height: 100%;
+  height: -webkit-calc(100% - var(--last-tl-element-height));
+  height: -moz-calc(100% - var(--last-tl-element-height));
+  height: calc(100% - var(--last-tl-element-height));
   width: 4px;
   background: var(--line-color);
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import VerticalTimeline from "./VerticalTimeline/VerticalTimeline";
@@ -10,6 +10,14 @@ import Chip from "./Chip";
 
 const MyTimeline = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    document.body.style.setProperty(
+      "--last-tl-element-height",
+      `${document.getElementById("last-tl-element").clientHeight}px`
+    );
+  });
+
   return (
     <VerticalTimeline className="text-gray-900 my-12 py-0">
       <VerticalTimelineElement
@@ -21,9 +29,9 @@ const MyTimeline = () => {
         iconClassName="bg-teal-400"
         icon={<BriefcaseIcon className="fill-white" />}
       >
-        <Chip className="bg-gray-50">CI</Chip>
-        <Chip className="bg-gray-50">Java Spring</Chip>
-        <Chip className="bg-gray-50">Nuxt</Chip>
+        <Chip className="!bg-gray-50">CI</Chip>
+        <Chip className="!bg-gray-50">Java Spring</Chip>
+        <Chip className="!bg-gray-50">Nuxt</Chip>
         <h2 className="vertical-timeline-element-title mt-2">
           {t("devops_consultant")}
         </h2>
@@ -101,6 +109,7 @@ const MyTimeline = () => {
         <p>Creative Direction, Visual Design</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
+        id="last-tl-element"
         className="vertical-timeline-element--education"
         date={t("november_2019")}
         dateClassName="dark:text-zinc-200"
