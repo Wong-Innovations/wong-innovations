@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-scroll";
+import { Link, animateScroll } from "react-scroll";
 
 import HouseIcon from "../assets/house.svg?react";
 import TimelineIcon from "../assets/timeline.svg?react";
@@ -14,6 +14,12 @@ import GithubIcon from "../assets/github.svg?react";
 const Nav = () => {
   const [hash, setHash] = useState("");
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document
+      .getElementById(window.location.hash ? window.location.hash : "#home")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   return (
     <div
