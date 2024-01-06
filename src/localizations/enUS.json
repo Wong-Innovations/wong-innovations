@@ -19,7 +19,7 @@
   "backend": "Backend",
   "backend_skills": "Express\nPrisma\nGraphQL\nSQL\nDjango\nSpring",
   "ci": "CI",
-  "ci_skills": "Jenkins\nAnsible\nOpenShift",
+  "ci_skills": "Jenkins\nAnsible\nOpenShift\nAzure DevOps",
   "languages": "Languages",
   "language_skills": "JavaScript\nPython\nJava"
 }

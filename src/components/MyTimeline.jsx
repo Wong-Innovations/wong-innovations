@@ -24,7 +24,7 @@ const MyTimeline = () => {
         className="vertical-timeline-element--work"
         textClassName="bg-teal-400"
         date={`2021${t("year")} - ${t("present")}`}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-black dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         iconClassName="bg-teal-400"
         icon={<BriefcaseIcon className="fill-white" />}
@@ -43,7 +43,7 @@ const MyTimeline = () => {
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
         date={`2019${t("year")} - 2020${t("year")}`}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         contentStyle={{ borderTop: "3px solid #2dd4bf" }}
         iconClassName="bg-teal-400"
@@ -63,7 +63,7 @@ const MyTimeline = () => {
       <VerticalTimelineElement
         className="vertical-timeline-element--dev"
         date={`2022${t("year")} - ${t("present")}`}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         contentStyle={{ borderTop: "3px solid #2dd4bf" }}
         iconClassName="bg-teal-400"
@@ -80,7 +80,7 @@ const MyTimeline = () => {
       <VerticalTimelineElement
         className="vertical-timeline-element--dev"
         date={`2022${t("year")} - ${t("present")}`}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         contentStyle={{ borderTop: "3px solid #2dd4bf" }}
         iconClassName="bg-teal-400"
@@ -96,7 +96,7 @@ const MyTimeline = () => {
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
         date={`2018${t("year")} - 2021${t("year")}`}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         contentStyle={{ borderTop: "3px solid #2dd4bf" }}
         iconClassName="bg-teal-400"
@@ -112,7 +112,7 @@ const MyTimeline = () => {
         id="last-tl-element"
         className="vertical-timeline-element--education"
         date={t("november_2019")}
-        dateClassName="dark:text-zinc-200"
+        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
         contentArrowStyle={{ display: "none" }}
         contentStyle={{ borderTop: "3px solid #2dd4bf" }}
         iconClassName="bg-teal-400"

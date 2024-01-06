@@ -1,4 +1,10 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import LeftArrowIcon from "../assets/left-arrow.svg?react";
 import RightArrowIcon from "../assets/right-arrow.svg?react";
@@ -42,12 +48,21 @@ const Profile = () => {
   return (
     <>
       <h2 className="self-center my-20 text-4xl">{t("skills")}</h2>
-      <div className="flex flex-grow justify-between items-center mb-20">
-        <div className="group flex flex-grow h-96 justify-start items-center pl-2">
-          <LeftArrowIcon className="w-12 h-12 fill-zinc-500 group-hover:fill-teal-400" />
-        </div>
-        <div className="flex space-x-8">
-          {cards.map(({ icon, title, content }, i) => (
+      <Swiper
+        slidesPerView={3}
+        initialSlide={3}
+        centeredSlides={true}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        // className="w-full"
+        // className="flex flex-grow justify-between items-center mb-20"
+      >
+        {cards.map(({ icon, title, content }, i) => (
+          <SwiperSlide key={i}>
             <div
               key={title}
               data-aos="fade-up"
@@ -61,12 +76,9 @@ const Profile = () => {
               <h3 className="text-3xl self-center mb-2">{title}</h3>
               <p className="text-center leading-snug font-medium">{content}</p>
             </div>
-          ))}
-        </div>
-        <div className="group flex flex-grow h-96 justify-end items-center">
-          <RightArrowIcon className="w-12 h-12 fill-zinc-500 group-hover:fill-teal-400" />
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 };
