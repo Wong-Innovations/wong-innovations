@@ -21,5 +21,7 @@
   "ci": "CI",
   "ci_skills": "Jenkins\nAnsible\nOpenShift\nAzure DevOps",
   "languages": "Languages",
-  "language_skills": "JavaScript\nPython\nJava"
+  "language_skills": "JavaScript\nPython\nJava",
+  "software": "Software",
+  "software_skills": "Adobe\nBlender\nPostman"
 }

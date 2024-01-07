@@ -63,19 +63,38 @@ const Skills = () => {
       title: t("languages"),
       content: t("language_skills"),
     },
+    {
+      icon: <CodingIcon className="w-16 h-16 fill-gray-50" />,
+      title: t("software"),
+      content: t("software_skills"),
+    },
   ];
 
   return (
     <>
       <h2 className="self-center my-20 text-4xl">{t("skills")}</h2>
-      <div className="w-full xl:max-w-5xl md:max-w-4xl justify-self-end self-center">
+      <div className="w-full max-w-9/10 justify-self-end self-center">
         <Slider
           infinite
-          slidesToShow={3}
+          slidesToShow={6}
           arrows
           dots
           nextArrow={<SlickRightArrow />}
           prevArrow={<SlickLeftArrow />}
+          responsive={[
+            {
+              breakpoint: 2400,
+              settings: { slidesToShow: 5 },
+            },
+            {
+              breakpoint: 1750,
+              settings: { slidesToShow: 4 },
+            },
+            {
+              breakpoint: 1536,
+              settings: { slidesToShow: 3 },
+            },
+          ]}
         >
           {cards.map(({ icon, title, content }, i) => (
             <div key={i}>

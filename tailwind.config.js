@@ -5,6 +5,7 @@ export default {
     extend: {
       maxWidth: {
         "1/2": "50%",
+        "9/10": "90%",
       },
     },
   },
