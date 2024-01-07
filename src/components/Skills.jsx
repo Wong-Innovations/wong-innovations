@@ -1,10 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { useDrag } from "react-use-gesture";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import Slider from "react-slick";
+import classNames from "classnames";
 
 import LeftArrowIcon from "../assets/left-arrow.svg?react";
 import RightArrowIcon from "../assets/right-arrow.svg?react";
@@ -13,14 +11,36 @@ import ServerIcon from "../assets/server.svg?react";
 import CodingIcon from "../assets/computer-code.svg?react";
 import CloudIcon from "../assets/cloud.svg?react";
 
-const Profile = () => {
-  const { t } = useTranslation();
+const SlickLeftArrow = ({ currentSlide, slideCount, className, ...props }) => {
+  return (
+    <div className="group">
+      <LeftArrowIcon
+        {...props}
+        className={classNames(
+          className,
+          "w-16 h-16 fill-zinc-500 group-hover:fill-teal-400 z-50 -left-10"
+        )}
+      />
+    </div>
+  );
+};
 
-  // {
-  //   icon: null,
-  //   title: "",
-  //   content: ""
-  // }
+const SlickRightArrow = ({ currentSlide, slideCount, className, ...props }) => {
+  return (
+    <div className="group">
+      <RightArrowIcon
+        {...props}
+        className={classNames(
+          className,
+          "w-16 h-16 fill-zinc-500 group-hover:fill-teal-400 -right-10"
+        )}
+      />
+    </div>
+  );
+};
+
+const Skills = () => {
+  const { t } = useTranslation();
 
   const cards = [
     {
@@ -48,39 +68,37 @@ const Profile = () => {
   return (
     <>
       <h2 className="self-center my-20 text-4xl">{t("skills")}</h2>
-      <Swiper
-        slidesPerView={3}
-        initialSlide={3}
-        centeredSlides={true}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        // className="w-full"
-        // className="flex flex-grow justify-between items-center mb-20"
-      >
-        {cards.map(({ icon, title, content }, i) => (
-          <SwiperSlide key={i}>
-            <div
-              key={title}
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay={`${250 * i}`}
-              className="flex flex-col w-64 h-96 rounded overflow-hidden shadow-lg bg-gray-50 text-zinc-900"
-            >
-              <div className="self-center mb-4 mt-10 p-4 bg-teal-400 rounded-full">
-                {icon}
+      <div className="w-full xl:max-w-5xl md:max-w-4xl justify-self-end self-center">
+        <Slider
+          infinite
+          slidesToShow={3}
+          arrows
+          dots
+          nextArrow={<SlickRightArrow />}
+          prevArrow={<SlickLeftArrow />}
+        >
+          {cards.map(({ icon, title, content }, i) => (
+            <div key={i}>
+              <div
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-delay={`${250 * i}`}
+                className="flex flex-col w-64 h-96 rounded mx-auto overflow-hidden shadow-lg bg-gray-50 text-zinc-900"
+              >
+                <div className="self-center mb-4 mt-10 p-4 bg-teal-400 rounded-full">
+                  {icon}
+                </div>
+                <h3 className="text-3xl self-center mb-2">{title}</h3>
+                <p className="text-center leading-snug font-medium">
+                  {content}
+                </p>
               </div>
-              <h3 className="text-3xl self-center mb-2">{title}</h3>
-              <p className="text-center leading-snug font-medium">{content}</p>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </Slider>
+      </div>
     </>
   );
 };
 
-export default Profile;
+export default Skills;
