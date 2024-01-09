@@ -23,5 +23,10 @@
   "languages": "言語",
   "language_skills": "",
   "software": "Software",
-  "software_skills": "Adobe\nBlender\nPostman"
+  "software_skills": "Adobe\nBlender\nPostman",
+  "contact_pl_name": "名前 *",
+  "contact_pl_email": "メール *",
+  "contact_pl_subject": "件名",
+  "contact_pl_message": "本文 *",
+  "submit": "送信"
 }

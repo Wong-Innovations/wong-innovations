@@ -7,6 +7,9 @@ export default {
         "1/2": "50%",
         "9/10": "90%",
       },
+      textUnderlineOffset: {
+        32: "32px",
+      },
     },
   },
   plugins: [],

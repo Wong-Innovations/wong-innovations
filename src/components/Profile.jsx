@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { animateScroll as scroll } from "react-scroll";
 
 const Profile = () => {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ const Profile = () => {
           <img
             className="aspect-square h-full w-full"
             alt="Dylan Wong"
-            src="/img/portrait.png?height=128&amp;width=128"
+            src="./assets/portrait.png?height=128&amp;width=128"
           />
         </span>
       </div>
@@ -23,10 +24,20 @@ const Profile = () => {
         </p>
       </div>
       <div className="space-x-4">
-        <button className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300">
+        <button
+          onClick={() =>
+            document
+              .getElementById("#gallery")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300"
+        >
           {t("view_portfolio")}
         </button>
-        <button className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300">
+        <button
+          onClick={() => scroll.scrollToBottom()}
+          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300"
+        >
           {t("contact_me")}
         </button>
       </div>

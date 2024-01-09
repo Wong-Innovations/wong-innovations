@@ -23,5 +23,10 @@
   "languages": "Languages",
   "language_skills": "JavaScript\nPython\nJava",
   "software": "Software",
-  "software_skills": "Adobe\nBlender\nPostman"
+  "software_skills": "Adobe\nBlender\nPostman",
+  "contact_pl_name": "Name *",
+  "contact_pl_email": "Email *",
+  "contact_pl_subject": "Subject",
+  "contact_pl_message": "Message *",
+  "submit": "Submit"
 }
