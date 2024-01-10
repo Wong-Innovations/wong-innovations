@@ -1,23 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const formRef = useRef();
+  const [disabled, setDisabled] = useState(false);
 
-  useEffect(() => {
-    const handleContactSubmit = (event) => {
-      console.log("submitted...");
-      document.getElementById("contact-form").reset();
-      event.preventDefault();
-    };
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", handleContactSubmit);
-    return () =>
-      document
-        .getElementById("contact-form")
-        .removeEventListener("submit", handleContactSubmit);
-  }, []);
+  const handleContactSubmit = (event) => {
+    event.preventDefault();
+    setDisabled(true);
+    toast
+      .promise(
+        emailjs.sendForm(
+          "service_8i1z28a",
+          "template_wp02lwp",
+          formRef.current,
+          "sXS-F9-BkXuxR6cSC"
+        ),
+        {
+          loading: "Sending...",
+          success: "Sent!",
+          error: "Error!",
+        }
+      )
+      .then(() => {
+        document.getElementById("contact-form").reset();
+        setDisabled(false);
+      });
+  };
 
   return (
     <>
@@ -26,6 +38,8 @@ const Contact = () => {
       </h2>
       <form
         id="contact-form"
+        ref={formRef}
+        onSubmit={handleContactSubmit}
         className="flex flex-col w-1/2 space-y-1.5 self-center"
       >
         <input
@@ -53,12 +67,22 @@ const Contact = () => {
         />
         <button
           type="submit"
+          disabled={disabled}
           className="bg-teal-400 h-10 px-4 py-2 placeholder-white"
         >
           {t("submit")}
         </button>
-        {/* <div className="flex flex-grow justify-between"></div> */}
+        <div className="flex flex-grow justify-between p-8">
+          <p className="uppercase">
+            &bull;{" "}
+            <a href="mailto:wong.innovations@gmail.com">
+              wong.innovations@gmail.com
+            </a>{" "}
+            &bull;
+          </p>
+        </div>
       </form>
+      <Toaster />
     </>
   );
 };
