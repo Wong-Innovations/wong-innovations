@@ -55,10 +55,7 @@ const MyTimeline = () => {
           {t("fullstack_intern")}
         </h2>
         <h4 className="vertical-timeline-element-subtitle">Staff Fox</h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, SEO, Online
-          Marketing
-        </p>
+        <p>{t("fullstack_intern_summary")}</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--dev"
@@ -75,7 +72,7 @@ const MyTimeline = () => {
         <h4 className="vertical-timeline-element-subtitle">
           core-documents, nuxt-mkdocs
         </h4>
-        <p>Strategy, Social Media</p>
+        <p>{t("npm_dev_summary")}</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--dev"
@@ -106,7 +103,7 @@ const MyTimeline = () => {
         <h4 className="vertical-timeline-element-subtitle">
           University of Nevada, Reno
         </h4>
-        <p>Creative Direction, Visual Design</p>
+        <p>{t("bs_math_summary")}</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         id="last-tl-element"

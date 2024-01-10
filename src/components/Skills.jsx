@@ -10,6 +10,8 @@ import WebsiteIcon from "../assets/website.svg?react";
 import ServerIcon from "../assets/server.svg?react";
 import CodingIcon from "../assets/computer-code.svg?react";
 import CloudIcon from "../assets/cloud.svg?react";
+import SoftwareIcon from "../assets/software.svg?react";
+import EditorIcon from "../assets/editor.svg?react";
 
 const SlickLeftArrow = ({ currentSlide, slideCount, className, ...props }) => {
   return (
@@ -64,9 +66,14 @@ const Skills = () => {
       content: t("language_skills"),
     },
     {
-      icon: <CodingIcon className="w-16 h-16 fill-gray-50" />,
+      icon: <SoftwareIcon className="w-16 h-16 fill-teal-400 stroke-gray-50" />,
       title: t("software"),
       content: t("software_skills"),
+    },
+    {
+      icon: <EditorIcon className="w-16 h-16 fill-gray-50" />,
+      title: t("editors"),
+      content: t("editor_skills"),
     },
   ];
 

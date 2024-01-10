@@ -40,7 +40,7 @@ const Contact = () => {
         id="contact-form"
         ref={formRef}
         onSubmit={handleContactSubmit}
-        className="flex flex-col w-1/2 space-y-1.5 self-center"
+        className="flex flex-col w-1/2 space-y-1.5 self-center mb-16"
       >
         <input
           name="name"
@@ -72,15 +72,21 @@ const Contact = () => {
         >
           {t("submit")}
         </button>
-        <div className="flex flex-grow justify-between p-8">
-          <p className="uppercase">
-            &bull;{" "}
-            <a href="mailto:wong.innovations@gmail.com">
+        <a href="mailto:wong.innovations@gmail.com">
+          <div className="relative group flex py-16 items-center">
+            <div
+              id="left-line"
+              className="flex-grow border-t [border-image:linear-gradient(to_right,transparent,#6b7280)_1] group-hover:[border-image:linear-gradient(to_right,transparent,#f9fafb)_1]"
+            ></div>
+            <span className="flex-shrink mx-4 text-gray-400 group-hover:text-gray-50">
               wong.innovations@gmail.com
-            </a>{" "}
-            &bull;
-          </p>
-        </div>
+            </span>
+            <div
+              id="right-line"
+              className="flex-grow border-t [border-image:linear-gradient(to_left,transparent,#6b7280)_1] group-hover:[border-image:linear-gradient(to_left,transparent,#f9fafb)_1]"
+            ></div>
+          </div>
+        </a>
       </form>
       <Toaster />
     </>
