@@ -10,6 +10,7 @@ import MyTimeline from "./components/MyTimeline";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import AutoHideScroll from "./components/AutoHideScroll";
+import Projects from "./components/Projects";
 
 const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -50,10 +51,15 @@ const App = () => {
       <section id="#timeline" className="flex min-h-screen">
         <MyTimeline />
       </section>
-      <section id="#code" className="flex flex-col min-h-min mb-20">
+      <section id="#code" className="flex flex-col min-h-screen justify-center">
         <Skills />
       </section>
-      <section id="#gallery" className="flex min-h-screen"></section>
+      <section
+        id="#gallery"
+        className="flex flex-col justify-center items-center min-h-screen"
+      >
+        <Projects />
+      </section>
       <section
         id="#contact"
         className="flex flex-col min-h-screen justify-center"

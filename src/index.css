@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clip-tl-corner {
+    content: "";
+    clip-path: polygon(0% 25%, 25% 25%, 25% 0%, 0% 0%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-width: 2px;
+  }
+  .clip-br-corner {
+    content: "";
+    clip-path: polygon(75% 75%, 75% 100%, 100% 100%, 100% 75%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-width: 2px;
+  }
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: rgb(39 39 42) rgb(82 82 91);

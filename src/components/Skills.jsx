@@ -79,7 +79,9 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="self-center my-20 text-4xl">{t("skills")}</h2>
+      <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400">
+        {t("skills")}
+      </h2>
       <div className="w-full max-w-9/10 justify-self-end self-center">
         <Slider
           infinite
