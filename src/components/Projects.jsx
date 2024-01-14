@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const ProjectLink = (props) => (
   <li
@@ -12,80 +13,81 @@ const ProjectLink = (props) => (
 );
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [currentProject, setCurrentProject] = useState(0);
   const projectInfo = [
     {
-      name: "This Site",
-      info: "This site was build with tailwind and react! The interactable cube at the top of the page was modeled in blender and imported into a ThreeJS scene. The background graphic was created in Adobe Illustrated.",
+      name: t("projects_this_site"),
+      info: t("projects_this_site_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/Wong-Innovations/wong-innovations",
         },
       ],
     },
     {
-      name: "Nuxt-Mkdocs",
-      info: "A nuxt-content based implementation of the mkdocs framework. Support for custom styles and components in the form of importable themes. Generate static docs from markdown or export your site to a nuxt-content app for even higher customization.",
+      name: t("projects_nuxt_mkdocs"),
+      info: t("projects_nuxt_mkdocs_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/Wong-Innovations/nuxt-mkdocs",
         },
         {
-          text: "NPM",
+          text: t("project_link_NPM"),
           href: "https://www.npmjs.com/package/nuxt-mkdocs",
         },
       ],
     },
     {
-      name: "GroovyScript",
-      info: "Groovyscript is a Minecraft mod that allows other mod developers to modify the games, recipes, loot tables, items, and more. As a contributor to the opensource project I have written compats for several mods, worked on the system for creating items and blocks, as well as the ability to interface with loot tables.",
+      name: t("projects_groovy"),
+      info: t("projects_groovy_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/CleanroomMC/GroovyScript",
         },
         {
-          text: "My Contributions",
+          text: t("project_link_contributions"),
           href: "https://github.com/CleanroomMC/GroovyScript/graphs/contributors",
         },
       ],
     },
     {
-      name: "Flashcard App",
-      info: "React native flashcard app that combines the multitude of testing methods such as multiple choice, free response, and fill in the blank. Additionally I implemented a spaced repetition algorithm for this app so the more you recall a card's answer correctly the less you get tested on it. This makes the app especially well suited for language learning.",
+      name: t("projects_flashcard_app"),
+      info: t("projects_flashcard_app_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/Wong-Innovations/Flashcard-App",
         },
       ],
     },
     {
-      name: "CORE-Documents",
-      info: "Node JS bindings for the CORE documents repository's API (a large collection of published research papers).",
+      name: t("projects_core_docs"),
+      info: t("projects_core_docs_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/Wong-Innovations/CORE-documents",
         },
         {
-          text: "NPM",
+          text: t("project_link_NPM"),
           href: "https://www.npmjs.com/package/core-documents",
         },
       ],
     },
     {
-      name: "Webmaster-API",
-      info: "Node JS bindings for the bing webmaster api (Bing's version of google trends).",
+      name: t("projects_webmaster"),
+      info: t("projects_webmaster_description"),
       links: [
         {
-          text: "Source",
+          text: t("project_link_source"),
           href: "https://github.com/Wong-Innovations/WebmasterAPI",
         },
         {
-          text: "NPM",
+          text: t("project_link_NPM"),
           href: "https://www.npmjs.com/package/webmaster-api",
         },
       ],
@@ -94,7 +96,7 @@ const Projects = () => {
   return (
     <>
       <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400">
-        Projects
+        {t("projects")}
       </h2>
       <div className="flex p-16 bg-zinc-900 bg-opacity-75 max-w-5xl min-h-max lg:ml-0 ml-2">
         <div className="max-w-2xl">
