@@ -101,12 +101,12 @@ const App = () => {
       </section>
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="sticky p-2 mb-2 bottom-4 left-full rounded-md !bg-teal-400"
+        className="sticky group p-2 mb-2 bottom-4 left-full rounded-md bg-teal-400 hover:bg-zinc-800 dark:hover:bg-gray-50"
       >
         {darkMode ? (
           <SunIcon className="w-8 h-8 fill-zinc-800" />
         ) : (
-          <MoonIcon className="w-8 h-8 fill-zinc-800" />
+          <MoonIcon className="w-8 h-8 fill-zinc-800 group-hover:fill-zinc-100" />
         )}
       </button>
       <AutoHideScroll />
