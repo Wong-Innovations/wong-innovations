@@ -46,24 +46,24 @@ const Contact = () => {
           name="name"
           placeholder={t("contact_pl_name")}
           required
-          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:border-b-teal-400 focus:border-b-2"
+          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:placeholder-teal-200 dark:focus:placeholder-zinc-400 focus:border-b-teal-400 focus:border-b-2"
         />
         <input
           name="email"
           placeholder={t("contact_pl_email")}
           required
-          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:border-b-teal-400 focus:border-b-2"
+          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:placeholder-teal-200 dark:focus:placeholder-zinc-400 focus:border-b-teal-400 focus:border-b-2"
         />
         <input
           name="subject"
           placeholder={t("contact_pl_subject")}
-          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:border-b-teal-400 focus:border-b-2"
+          className="bg-zinc-800/90 dark:bg-zinc-900 h-10 pl-4 placeholder-white dark:placeholder-zinc-400 outline-none focus:placeholder-teal-200 dark:focus:placeholder-zinc-400 focus:border-b-teal-400 focus:border-b-2"
         />
         <textarea
           name="message"
           placeholder={t("contact_pl_message")}
           required
-          className="bg-zinc-800/90 dark:bg-zinc-900 pl-4 pt-2 min-h-48 placeholder-white dark:placeholder-zinc-400 outline-none focus:border-teal-400 focus:border-2"
+          className="bg-zinc-800/90 dark:bg-zinc-900 pl-4 pt-2 min-h-48 placeholder-white dark:placeholder-zinc-400 outline-none focus:placeholder-teal-200 dark:focus:placeholder-zinc-400 focus:border-teal-400 focus:border-2 shadow-lg"
         />
         <button
           type="submit"
