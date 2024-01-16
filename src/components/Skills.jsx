@@ -46,32 +46,42 @@ const Skills = () => {
 
   const cards = [
     {
-      icon: <WebsiteIcon className="w-16 h-16 fill-gray-50" />,
+      icon: (
+        <WebsiteIcon className="w-16 h-16 fill-zinc-700 dark:fill-gray-50" />
+      ),
       title: t("frontend"),
       content: t("frontend_skills"),
     },
     {
-      icon: <ServerIcon className="w-16 h-16 fill-gray-50" />,
+      icon: (
+        <ServerIcon className="w-16 h-16 fill-zinc-700 dark:fill-gray-50" />
+      ),
       title: t("backend"),
       content: t("backend_skills"),
     },
     {
-      icon: <CloudIcon className="w-16 h-16 fill-gray-50" />,
+      icon: <CloudIcon className="w-16 h-16 fill-zinc-700 dark:fill-gray-50" />,
       title: t("ci"),
       content: t("ci_skills"),
     },
     {
-      icon: <CodingIcon className="w-16 h-16 fill-gray-50" />,
+      icon: (
+        <CodingIcon className="w-16 h-16 fill-zinc-700 dark:fill-gray-50" />
+      ),
       title: t("languages"),
       content: t("language_skills"),
     },
     {
-      icon: <SoftwareIcon className="w-16 h-16 fill-teal-400 stroke-gray-50" />,
+      icon: (
+        <SoftwareIcon className="w-16 h-16 fill-teal-400 stroke-zinc-700 dark:stroke-gray-50" />
+      ),
       title: t("software"),
       content: t("software_skills"),
     },
     {
-      icon: <EditorIcon className="w-16 h-16 fill-gray-50" />,
+      icon: (
+        <EditorIcon className="w-16 h-16 fill-zinc-700 dark:fill-gray-50" />
+      ),
       title: t("editors"),
       content: t("editor_skills"),
     },
@@ -111,7 +121,7 @@ const Skills = () => {
                 data-aos="fade-up"
                 data-aos-once="true"
                 data-aos-delay={`${250 * i}`}
-                className="flex flex-col w-64 h-96 rounded mx-auto overflow-hidden shadow-lg bg-gray-50 text-zinc-900"
+                className="flex flex-col w-64 h-96 rounded mx-auto overflow-hidden shadow-lg bg-zinc-700 text-gray-200 dark:bg-gray-50 dark:text-zinc-900"
               >
                 <div className="self-center mb-4 mt-10 p-4 bg-teal-400 rounded-full">
                   {icon}

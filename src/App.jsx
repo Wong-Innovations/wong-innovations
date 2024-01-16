@@ -11,17 +11,50 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import AutoHideScroll from "./components/AutoHideScroll";
 import Projects from "./components/Projects";
+import SunIcon from "./assets/sun.svg?react";
+import MoonIcon from "./assets/moon.svg?react";
 
 const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     Aos.init();
+
+    // dark unless user prefers light
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: light)").matches
+    ) {
+      setDarkMode(false);
+    }
+
+    // initialize tailwind theme selector:
+    const changeThemeEvent = (event) => {
+      setDarkMode(!event.matches);
+    };
+
+    window
+      .matchMedia("(prefers-color-scheme: light)")
+      .addEventListener("change", changeThemeEvent);
+
+    return () =>
+      window
+        .matchMedia("(prefers-color-scheme: light)")
+        .removeEventListener("change", changeThemeEvent);
   }, []);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <main
-      className={`h-full bg-zinc-800 after:opacity-25 text-gray-900 dark:text-gray-50 pl-14 whitespace-pre-line`}
+      className={`h-full bg-zinc-100 dark:bg-zinc-800 dark:before:opacity-25 dark:after:opacity-25 text-zinc-800 dark:text-gray-50 pl-14 whitespace-pre-line`}
     >
       <Nav />
       <header id="#home" className="flex h-screen">
@@ -66,6 +99,16 @@ const App = () => {
       >
         <Contact />
       </section>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="sticky p-2 mb-2 bottom-4 left-full rounded-md !bg-teal-400"
+      >
+        {darkMode ? (
+          <SunIcon className="w-8 h-8 fill-zinc-800" />
+        ) : (
+          <MoonIcon className="w-8 h-8 fill-zinc-800" />
+        )}
+      </button>
       <AutoHideScroll />
     </main>
   );

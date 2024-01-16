@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const ProjectLink = (props) => (
   <li
     className={`hover:text-white cursor-pointer ${
-      props.active ? "text-teal-400" : "text-zinc-400"
+      props.active ? "text-teal-400" : "text-zinc-300 dark:text-zinc-400"
     }`}
     onClick={props.onClick}
   >
@@ -98,7 +98,7 @@ const Projects = () => {
       <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400">
         {t("projects")}
       </h2>
-      <div className="flex p-16 bg-zinc-900 bg-opacity-75 max-w-5xl min-h-max lg:ml-0 ml-2">
+      <div className="flex p-16 bg-zinc-800/90 dark:bg-zinc-900/75 text-zinc-50 max-w-5xl min-h-max lg:ml-0 ml-2">
         <div className="max-w-2xl">
           <h3 className="mb-4 text-2xl">{projectInfo[currentProject].name}</h3>
           <div className="border-l-2 border-l-teal-400 px-8">
@@ -108,7 +108,7 @@ const Projects = () => {
                 key={i}
                 href={link.href}
                 target="_blank"
-                className="mt-4 mr-4 ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:hover:bg-gray-50 dark:text-gray-900 dark:bg-teal-400 dark:focus-visible:ring-gray-300"
+                className="mt-4 mr-4 ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 hover:bg-gray-50 text-gray-900 bg-teal-400 focus-visible:ring-gray-300"
               >
                 {link.text}
               </a>

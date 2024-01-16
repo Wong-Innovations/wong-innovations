@@ -19,7 +19,7 @@ const Profile = () => {
         <h1 className="text-3xl font-bold tracking-tighter mb-2 sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
           {t("name")}
         </h1>
-        <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl dark:text-gray-200">
+        <p className="mx-auto max-w-[700px] text-zinc-800 md:text-xl dark:text-gray-200">
           {t("roles")}
         </p>
       </div>
@@ -30,13 +30,13 @@ const Profile = () => {
               .getElementById("#gallery")
               .scrollIntoView({ behavior: "smooth" })
           }
-          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300"
+          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-teal-400 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:focus-visible:ring-gray-300"
         >
           {t("view_portfolio")}
         </button>
         <button
           onClick={() => scroll.scrollToBottom()}
-          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-teal-400 dark:focus-visible:ring-gray-300"
+          className="ring-offset-background focus-visible:ring-offset-2 inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-teal-400 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:focus-visible:ring-gray-300"
         >
           {t("contact_me")}
         </button>
