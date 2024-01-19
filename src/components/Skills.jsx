@@ -97,7 +97,6 @@ const Skills = () => {
           infinite
           slidesToShow={6}
           arrows
-          dots
           nextArrow={<SlickRightArrow />}
           prevArrow={<SlickLeftArrow />}
           responsive={[
@@ -112,6 +111,14 @@ const Skills = () => {
             {
               breakpoint: 1536,
               settings: { slidesToShow: 3 },
+            },
+            {
+              breakpoint: 1000,
+              settings: { slidesToShow: 2 },
+            },
+            {
+              breakpoint: 700,
+              settings: { slidesToShow: 1, arrows: false, dots: true },
             },
           ]}
         >

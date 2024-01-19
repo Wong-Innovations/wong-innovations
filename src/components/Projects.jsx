@@ -98,7 +98,7 @@ const Projects = () => {
       <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400">
         {t("projects")}
       </h2>
-      <div className="flex p-16 bg-zinc-800/90 dark:bg-zinc-900/75 text-zinc-50 max-w-5xl min-h-max lg:ml-0 ml-2">
+      <div className="flex md:flex-row flex-col md:gap-0 gap-8 p-8 md:p-16 bg-zinc-800/90 dark:bg-zinc-900/75 text-zinc-50 max-w-5xl md:mr-0 mx-2">
         <div className="max-w-2xl">
           <h3 className="mb-4 text-2xl">{projectInfo[currentProject].name}</h3>
           <div className="border-l-2 border-l-teal-400 px-8">
@@ -115,13 +115,16 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        <div className="relative self-center min-w-40 px-4 pt-4 pb-6 before:clip-tl-corner after:clip-br-corner before:border-teal-400 after:border-teal-400">
+        <div className="relative self-center min-w-40 md:w-auto w-full px-4 pt-4 pb-6 before:clip-tl-corner after:clip-br-corner before:border-teal-400 after:border-teal-400">
           <ul>
             {projectInfo.map((proj, i) => (
               <ProjectLink
                 key={i}
                 active={i == currentProject}
-                onClick={() => setCurrentProject(i)}
+                onClick={() => {
+                  console.log(i);
+                  setCurrentProject(i);
+                }}
               >
                 {proj.name}
               </ProjectLink>

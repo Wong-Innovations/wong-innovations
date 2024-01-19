@@ -25,6 +25,11 @@
   }
 }
 
+* {
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
 /*#region scrollbar css*/
 
 html > * {

@@ -5,8 +5,8 @@ const Profile = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-start space-y-4 ml-16">
-      <div>
+    <div className="flex flex-col items-start space-y-4 sm:ml-16 ml-4">
+      <div className="lg:block hidden">
         <span className="relative flex shrink-0 overflow-hidden rounded-full h-32 w-32">
           <img
             className="aspect-square h-full w-full"

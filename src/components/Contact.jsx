@@ -33,14 +33,14 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400 uppercase">
+      <h2 className="self-center mb-20 text-5xl underline underline-offset-32 decoration-teal-400 uppercase justify-self-center">
         {t("contact_me")}
       </h2>
       <form
         id="contact-form"
         ref={formRef}
         onSubmit={handleContactSubmit}
-        className="flex flex-col w-1/2 space-y-1.5 self-center mb-16 text-gray-50"
+        className="flex flex-col xl:w-1/2 l:w-3/4 w-10/12 space-y-1.5 self-center mb-16 text-gray-50"
       >
         <input
           name="name"
@@ -73,7 +73,7 @@ const Contact = () => {
           {t("submit")}
         </button>
         <a href="mailto:wong.innovations@gmail.com">
-          <div className="relative group flex py-16 items-center">
+          <div className="relative group flex pt-16 items-center">
             <div
               id="left-line"
               className="flex-grow border-t [border-image:linear-gradient(to_right,transparent,#000000)_1] group-hover:[border-image:linear-gradient(to_right,transparent,#2dd4bf)_1] dark:[border-image:linear-gradient(to_right,transparent,#6b7280)_1] dark:group-hover:[border-image:linear-gradient(to_right,transparent,#f9fafb)_1]"

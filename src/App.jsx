@@ -57,18 +57,21 @@ const App = () => {
       className={`h-full bg-zinc-100 dark:bg-zinc-800 dark:before:opacity-25 dark:after:opacity-25 text-zinc-800 dark:text-gray-50 pl-14 whitespace-pre-line`}
     >
       <Nav />
-      <header id="#home" className="flex h-screen">
-        <section className="flex-grow max-w-1/2 flex flex-col justify-center">
+      <header
+        id="#home"
+        className="flex h-screen lg:flex-row flex-col-reverse lg:justify-between"
+      >
+        <section className="flex flex-col lg:justify-center justify-end lg:mb-0 mb-32">
           <Profile />
         </section>
-        <div className="flex-grow max-w-1/2">
+        <div className="lg:flex-grow lg:max-w-1/2 lg:h-screen lg:max-h-full min-h-1/2 self-center my-auto">
           <Canvas
             className="touch-none"
             resize={{ scroll: false }}
             camera={{
               position: [-2.77, 2, 5.5],
               rotation: [-0.3155, -0.4431, -0.139],
-              fov: 75,
+              fov: 70,
             }}
           >
             <directionalLight position={[5, 4.5, 7.5]} />
@@ -81,7 +84,7 @@ const App = () => {
           </Canvas>
         </div>
       </header>
-      <section id="#timeline" className="flex min-h-screen">
+      <section id="#timeline" className="flex min-h-screen overflow-x-clip">
         <MyTimeline />
       </section>
       <section id="#code" className="flex flex-col min-h-screen justify-center">
@@ -95,13 +98,13 @@ const App = () => {
       </section>
       <section
         id="#contact"
-        className="flex flex-col min-h-screen justify-center"
+        className="flex flex-col min-h-screen justify-center justify-items-center"
       >
         <Contact />
       </section>
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="sticky group p-2 mb-2 bottom-4 left-full rounded-md bg-teal-400 hover:bg-zinc-800 dark:hover:bg-gray-50"
+        className="fixed group p-2 bottom-2 right-0 rounded-md bg-teal-400 hover:bg-zinc-800 dark:hover:bg-gray-50"
       >
         {darkMode ? (
           <SunIcon className="w-8 h-8 fill-zinc-800" />
