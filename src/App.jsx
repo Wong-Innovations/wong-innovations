@@ -85,7 +85,7 @@ const App = () => {
         </div>
       </header>
       <section id="#timeline" className="flex min-h-screen overflow-x-clip">
-        <MyTimeline />
+        <MyTimeline darkMode={darkMode} />
       </section>
       <section id="#code" className="flex flex-col min-h-screen justify-center">
         <Skills />

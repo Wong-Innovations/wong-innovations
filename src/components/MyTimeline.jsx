@@ -8,7 +8,7 @@ import GitPullIcon from "../assets/git-pull.svg?react";
 import SchoolIcon from "../assets/school.svg?react";
 import Chip from "./Chip";
 
-const MyTimeline = () => {
+const MyTimeline = (props) => {
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -18,113 +18,97 @@ const MyTimeline = () => {
     );
   });
 
+  const experience = [
+    {
+      date: `2021${t("year")} - ${t("present")}`,
+      icon: <BriefcaseIcon />,
+      chips: ["CI", "Java Spring", "Nuxt"],
+      heading: t("devops_consultant"),
+      subHeading: "OnCore Consulting",
+      summary: t("oncore_summary"),
+    },
+    {
+      date: `2019${t("year")} - 2020${t("year")}`,
+      icon: <BriefcaseIcon />,
+      chips: ["React", "Django"],
+      heading: t("fullstack_intern"),
+      subHeading: "Staff Fox",
+      summary: t("fullstack_intern_summary"),
+    },
+    {
+      date: `2022${t("year")} - ${t("present")}`,
+      icon: <GitPullIcon />,
+      chips: ["API", "Package"],
+      heading: t("npm_dev"),
+      subHeading: "core-documents, nuxt-mkdocs",
+      summary: t("npm_dev_summary"),
+    },
+    {
+      date: `2022${t("year")} - ${t("present")}`,
+      icon: <GitPullIcon />,
+      chips: ["Java Mixins"],
+      heading: t("os_contributor"),
+      subHeading: "CleanroomMC",
+      summary: t("os_contributor_summary"),
+    },
+    {
+      date: `2018${t("year")} - 2021${t("year")}`,
+      icon: <SchoolIcon />,
+      chips: [],
+      heading: t("bs_math"),
+      subHeading: "University of Nevada, Reno",
+      summary: t("bs_math_summary"),
+    },
+    {
+      date: t("november_2019"),
+      icon: <SchoolIcon />,
+      chips: ["Python"],
+      heading: t("hackathon"),
+      subHeading: "University of Nevada, Reno",
+      summary: t("hackathon_summary"),
+    },
+  ];
+
   return (
-    <VerticalTimeline className="text-gray-900 my-12 py-0">
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        textClassName="bg-teal-400"
-        date={`2021${t("year")} - ${t("present")}`}
-        dateClassName="dark:sm:!text-black dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        iconClassName="bg-teal-400"
-        icon={<BriefcaseIcon className="fill-white" />}
-      >
-        <Chip className="!bg-gray-50">CI</Chip>
-        <Chip className="!bg-gray-50">Java Spring</Chip>
-        <Chip className="!bg-gray-50">Nuxt</Chip>
-        <h2 className="vertical-timeline-element-title mt-2">
-          {t("devops_consultant")}
-        </h2>
-        <h4 className="vertical-timeline-element-subtitle">
-          OnCore Consulting
-        </h4>
-        <p>{t("oncore_summary")}</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date={`2019${t("year")} - 2020${t("year")}`}
-        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        contentStyle={{ borderTop: "3px solid #2dd4bf" }}
-        iconClassName="bg-teal-400"
-        icon={<BriefcaseIcon className="fill-white" />}
-      >
-        <Chip>React</Chip>
-        <Chip>Django</Chip>
-        <h2 className="vertical-timeline-element-title mt-2">
-          {t("fullstack_intern")}
-        </h2>
-        <h4 className="vertical-timeline-element-subtitle">Staff Fox</h4>
-        <p>{t("fullstack_intern_summary")}</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--dev"
-        date={`2022${t("year")} - ${t("present")}`}
-        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        contentStyle={{ borderTop: "3px solid #2dd4bf" }}
-        iconClassName="bg-teal-400"
-        icon={<GitPullIcon className="fill-white" />}
-      >
-        <Chip>API</Chip>
-        <Chip>Package</Chip>
-        <h2 className="vertical-timeline-element-title mt-2">{t("npm_dev")}</h2>
-        <h4 className="vertical-timeline-element-subtitle">
-          core-documents, nuxt-mkdocs
-        </h4>
-        <p>{t("npm_dev_summary")}</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--dev"
-        date={`2022${t("year")} - ${t("present")}`}
-        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        contentStyle={{ borderTop: "3px solid #2dd4bf" }}
-        iconClassName="bg-teal-400"
-        icon={<GitPullIcon className="fill-white" />}
-      >
-        <Chip>Java Mixins</Chip>
-        <h2 className="vertical-timeline-element-title mt-2">
-          {t("os_contributor")}
-        </h2>
-        <h4 className="vertical-timeline-element-subtitle">CleanroomMC</h4>
-        <p>{t("os_contributor_summary")}</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date={`2018${t("year")} - 2021${t("year")}`}
-        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        contentStyle={{ borderTop: "3px solid #2dd4bf" }}
-        iconClassName="bg-teal-400"
-        icon={<SchoolIcon className="fill-white" />}
-      >
-        <h2 className="vertical-timeline-element-title">{t("bs_math")}</h2>
-        <h4 className="vertical-timeline-element-subtitle">
-          University of Nevada, Reno
-        </h4>
-        <p>{t("bs_math_summary")}</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        id="last-tl-element"
-        className="vertical-timeline-element--education"
-        date={t("november_2019")}
-        dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
-        contentArrowStyle={{ display: "none" }}
-        contentStyle={{ borderTop: "3px solid #2dd4bf" }}
-        iconClassName="bg-teal-400"
-        icon={<SchoolIcon className="fill-white" />}
-      >
-        <Chip>Python</Chip>
-        <h2 className="vertical-timeline-element-title mt-2">
-          ACM Hackathon 1st Place
-        </h2>
-        <p>Won colliegate hackathon with staff scheduling app submission.</p>
-      </VerticalTimelineElement>
-      {/* <VerticalTimelineElement
-        iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
-        icon={<StarIcon className="fill-white" />}
-      /> */}
+    <VerticalTimeline
+      key={props.darkMode ? "dark-tl" : "light-tl"}
+      className="text-gray-100 dark:text-gray-900 my-12 py-0"
+      lineColor={props.darkMode ? "#ffffff" : "#3f3f46"}
+    >
+      {experience.map((exp, i) => (
+        <VerticalTimelineElement
+          key={i}
+          id={i == experience.length - 1 ? "last-tl-element" : null}
+          textClassName={
+            i == 0 ? "bg-teal-400 text-gray-900" : "bg-zinc-700 dark:bg-white"
+          }
+          date={exp.date}
+          dateClassName="dark:sm:!text-zinc-700 dark:lg:!text-zinc-200"
+          contentArrowStyle={{ display: "none" }}
+          iconClassName="bg-teal-400 shadow-size-medium"
+          icon={<exp.icon.type className="fill-zinc-700 dark:fill-white" />}
+        >
+          {exp.chips.map((chip, j) => (
+            <Chip
+              key={j}
+              className={
+                i == 0
+                  ? "bg-gray-50 dark:bg-gray-50"
+                  : "bg-teal-400 dark:bg-gray-900/20"
+              }
+            >
+              {chip}
+            </Chip>
+          ))}
+          <h2 className="vertical-timeline-element-title mt-2">
+            {exp.heading}
+          </h2>
+          <h4 className="vertical-timeline-element-subtitle">
+            {exp.subHeading}
+          </h4>
+          <p>{exp.summary}</p>
+        </VerticalTimelineElement>
+      ))}
     </VerticalTimeline>
   );
 };
