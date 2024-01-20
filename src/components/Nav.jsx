@@ -23,7 +23,7 @@ const Nav = () => {
 
   return (
     <div
-      className="fixed inset-y-0 left-0 flex flex-col items-center justify-between bg-zinc-900 h-screen p-4"
+      className="fixed inset-y-0 left-0 flex flex-col items-center justify-between bg-zinc-900 h-dvh p-4"
       id="test"
     >
       <div className="flex flex-col items-center space-y-1">
