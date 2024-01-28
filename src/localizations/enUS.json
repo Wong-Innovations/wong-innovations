@@ -24,7 +24,7 @@
   "backend": "Backend",
   "backend_skills": "Express\nPrisma\nGraphQL\nSQL\nDjango\nSpring",
   "ci": "CI",
-  "ci_skills": "Jenkins\nAnsible\nOpenShift\nAzure DevOps",
+  "ci_skills": "Jenkins\nAnsible\nOpenShift\nAzure DevOps\nDocker\nAWS",
   "languages": "Languages",
   "language_skills": "JavaScript\nPython\nJava",
   "software": "Software",
@@ -51,5 +51,10 @@
   "contact_pl_email": "Email *",
   "contact_pl_subject": "Subject",
   "contact_pl_message": "Message *",
-  "submit": "Submit"
+  "submit": "Submit",
+  "sr_home": "Home",
+  "sr_timeline": "Timeline",
+  "sr_skills": "Skills",
+  "sr_projects": "Projects",
+  "sr_contact": "Contact Me"
 }

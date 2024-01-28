@@ -13,7 +13,7 @@ import GithubIcon from "../assets/github.svg?react";
 
 const Nav = () => {
   const [hash, setHash] = useState("");
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     document
@@ -58,7 +58,7 @@ const Nav = () => {
               hash == "" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
-          <span className="sr-only">Home</span>
+          <span className="sr-only">{t("sr_home")}</span>
         </Link>
         <Link
           to="#timeline"
@@ -73,7 +73,7 @@ const Nav = () => {
               hash == "#timeline" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
-          <span className="sr-only">About</span>
+          <span className="sr-only">{t("sr_timeline")}</span>
         </Link>
         <Link
           to="#code"
@@ -88,7 +88,7 @@ const Nav = () => {
               hash == "#code" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
-          <span className="sr-only">Code</span>
+          <span className="sr-only">{t("sr_skills")}</span>
         </Link>
         <Link
           to="#gallery"
@@ -103,7 +103,7 @@ const Nav = () => {
               hash == "#gallery" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
-          <span className="sr-only">Gallery</span>
+          <span className="sr-only">{t("sr_projects")}</span>
         </Link>
         <Link
           to="#contact"
@@ -118,7 +118,7 @@ const Nav = () => {
               hash == "#contact" ? "fill-teal-400" : "fill-zinc-500"
             }`}
           />
-          <span className="sr-only">Contact Me</span>
+          <span className="sr-only">{t("sr_contact")}</span>
         </Link>
       </nav>
       <div className="flex flex-col items-center space-y-4">

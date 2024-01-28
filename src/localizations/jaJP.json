@@ -24,7 +24,7 @@
   "backend": "バックエンド",
   "backend_skills": "エクスプレス\nプリズマ\nグラフQL\nエスキューエル\nダンジョ\nスプリング",
   "ci": "継続的インテ\nグレーション",
-  "ci_skills": "ジェンキンス\nアンシブル\nオープンシフト\nアジュールディーヴォプス",
+  "ci_skills": "ジェンキンス\nアンシブル\nオープンシフト\nアジュールディーヴォプス\nドッカー\nエーウィーエス",
   "languages": "言語",
   "language_skills": "ジャバスクリプト\nパイソン\nジャヴァ",
   "software": "ソフトウェア",
@@ -51,5 +51,10 @@
   "contact_pl_email": "メール *",
   "contact_pl_subject": "件名",
   "contact_pl_message": "本文 *",
-  "submit": "送信"
+  "submit": "送信",
+  "sr_home": "ホーム",
+  "sr_timeline": "経歴",
+  "sr_skills": "職業技能",
+  "sr_projects": "プロジェクト",
+  "sr_contact": "お問い合わせ"
 }
